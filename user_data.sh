@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo apt update
-sudo apt install -y s3fs
-sudo echo "s3fs#g1-jellyfin /home/ubuntu/s3-jellyfin fuse _netdev,allow_other,iam_role,url=http://s3.amazonaws.com 0 0" | sudo tee -a /etc/fstab
-sudo mkdir /home/ubuntu/s3-jellyfin
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install docker.io docker-compose git -y
+sudo usermod -aG docker ubuntu
 sudo mount -a
 
 # Replace these values with your own
@@ -31,3 +31,9 @@ if mountpoint -q $EFS_MOUNT_POINT; then
 else
     echo "Failed to mount EFS"
 fi
+
+git clone https://github.com/heitorlourencosilva/Oficina12Grupo1.git
+cd Oficina12Grupo1/
+docker-compose up -d
+
+sudo reboot
