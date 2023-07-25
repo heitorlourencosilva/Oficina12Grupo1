@@ -6,7 +6,7 @@ sudo usermod -aG docker ubuntu
 sudo mount -a
 
 # Replace these values with your own
-EFS_FILE_SYSTEM_ID="fs-08e00c647710edcc5"
+EFS_FILE_SYSTEM_ID="fs-0d3aa7a014cd7fa88"
 EFS_REGION="us-east-1"
 EFS_MOUNT_POINT="/home/ubuntu/efs-jellyfin/"
 
@@ -23,7 +23,7 @@ sudo mount -t nfs4 $EFS_FILE_SYSTEM_ID.efs.$EFS_REGION.amazonaws.com:/ $EFS_MOUN
 echo "$EFS_FILE_SYSTEM_ID.efs.$EFS_REGION.amazonaws.com:/ $EFS_MOUNT_POINT nfs4 defaults,_netdev 0 0" | sudo tee -a /etc/fstab
 
 # Set appropriate permissions on the mount point
-sudo chown ec2-user:ec2-user $EFS_MOUNT_POINT
+sudo chown ubuntu:ubuntu $EFS_MOUNT_POINT
 
 # Check if the mount was successful
 if mountpoint -q $EFS_MOUNT_POINT; then
