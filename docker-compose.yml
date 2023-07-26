@@ -17,3 +17,4 @@ services:
       - /home/ubuntu/efs-jellyfin/media:/var/media/jellyfin
     ports:
       - "80:8096" # Joga na porta 80
+      - "443:8920" # Joga na porta 80
