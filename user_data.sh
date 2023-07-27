@@ -6,7 +6,7 @@ sudo usermod -aG docker ubuntu
 sudo mount -a
 
 # Replace these values with your own
-EFS_FILE_SYSTEM_ID="fs-0d3aa7a014cd7fa88"
+EFS_FILE_SYSTEM_ID="fs-0981e92dc70ee9a4a"
 EFS_REGION="us-east-1"
 EFS_MOUNT_POINT="/home/ubuntu/efs-jellyfin/"
 
