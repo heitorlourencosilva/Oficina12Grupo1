@@ -1,7 +1,7 @@
 services:
   jellyfin:
     image: heitorlourencosilva/jellyfin_mysql
-    user: ubuntu:ubuntu # user:group / acredito que nao precisa dessa configuracao pode fechar / Configurado para o play with docker
+    # user: ubuntu:ubuntu # user:group / acredito que nao precisa dessa configuracao pode fechar / Configurado para o play with docker
     # network_mode: 'host' # Se ativado ignora a ports e joga no porta 8096
     restart: 'unless-stopped'
     environment: # Configura as variaveis das pastas / o que vai aparecer no jellyfin
